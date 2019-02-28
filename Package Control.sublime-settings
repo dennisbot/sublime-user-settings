@@ -1,0 +1,41 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Babel",
+		"Better CoffeeScript",
+		"ColorSchemeSelector",
+		"Compare Side-By-Side",
+		"Emmet",
+		"File History",
+		"Gist",
+		"Git",
+		"HTML-CSS-JS Prettify",
+		"Inspired GitHub Color Scheme",
+		"Jade",
+		"JavaScriptNext - ES6 Syntax",
+		"JsPrettier",
+		"JSX",
+		"MarkdownPreview",
+		"Material Color Scheme",
+		"Package Control",
+		"PackageResourceViewer",
+		"Pretty JSON",
+		"Pug",
+		"React Development Snippets",
+		"Sass",
+		"SassBeautify",
+		"SideBarEnhancements",
+		"Terminal",
+		"Theme - Bamboo",
+		"Theme - Cobalt2",
+		"TypeScript Syntax",
+		"Wombat Color Scheme",
+		"Wombat Theme",
+		"Wombatish color scheme",
+		"zenburn"
+	]
+}
