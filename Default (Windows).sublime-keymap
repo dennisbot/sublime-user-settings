@@ -1,5 +1,7 @@
 [
-  { "keys": ["ctrl+shift+;"], "command": "open_terminal" },
+  { "keys": ["ctrl+alt+p"], "command": "prompt_select_workspace" },
+  { "keys": ["ctrl+shift+;"], "command": "open_terminal_project_folder" },
+  { "keys": ["ctrl+shift+alt+;"], "command": "open_terminal" },
   { "keys": ["ctrl+super+i"], "command": "reveal_in_side_bar" },
   {
     "keys": ["ctrl+shift+c"],
@@ -297,50 +299,6 @@
     "keys": ["["],
     "command": "insert_snippet",
     "args": { "contents": "${2:[${1:$SELECTION}]}${0}" },
-    "context": [
-      {
-        "key": "setting.auto_match_enabled",
-        "operator": "equal",
-        "operand": true
-      },
-      {
-        "key": "selection_empty",
-        "operator": "equal",
-        "operand": false,
-        "match_all": true
-      }
-    ]
-  },
-  // Auto-pair curly brackets
-  {
-    "keys": ["{"],
-    "command": "insert_snippet",
-    "args": { "contents": "${2:\\{${1:}\\}}${0}" },
-    "context": [
-      {
-        "key": "setting.auto_match_enabled",
-        "operator": "equal",
-        "operand": true
-      },
-      {
-        "key": "selection_empty",
-        "operator": "equal",
-        "operand": true,
-        "match_all": true
-      },
-      {
-        "key": "following_text",
-        "operator": "regex_contains",
-        "operand": "^(?:\t| |\\)|]|\\}|$)",
-        "match_all": true
-      }
-    ]
-  },
-  {
-    "keys": ["{"],
-    "command": "insert_snippet",
-    "args": { "contents": "{${0:$SELECTION}}" },
-    "args": { "contents": "${2:\\{${1:$SELECTION}\\}}${0}" },
     "context": [
       {
         "key": "setting.auto_match_enabled",
