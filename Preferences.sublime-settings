@@ -15,6 +15,7 @@
 		"log/",
 		"coverage/",
 		"public/",
+		"dist/",
 		"bower_components/"
 	],
 	"bold_folder_labels": true,
@@ -82,5 +83,6 @@
 	"trim_trailing_white_space_on_save": false,
 	"update_check": false,
 	"wide_caret": true,
-	"word_wrap": true
+	"word_wrap": true,
+	"remember_full_screen": true,
 }
