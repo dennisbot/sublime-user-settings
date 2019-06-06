@@ -59,7 +59,13 @@
 		"public/packs/",
 		"tmp/"
 	],
-	"font_size": 19,
+	"font_face": "Fira Code",
+	"font_options":
+	[
+		"subpixel_antialias",
+		"gray_antialias"
+	],
+	"font_size": 21,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -74,15 +80,15 @@
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,
 	"preview_on_click": false,
+	"remember_full_screen": true,
 	"save_on_focus_lost": false,
 	"show_encoding": true,
 	"show_full_path": true,
 	"tab_size": 2,
 	"theme": "Bamboo.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": false,
+	"trim_trailing_white_space_on_save": true,
 	"update_check": false,
 	"wide_caret": true,
-	"word_wrap": true,
-	"remember_full_screen": true,
+	"word_wrap": true
 }
