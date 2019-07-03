@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[console.log('${1:key}: ', ${1:key});$0]]></content>
     <tabTrigger>dm</tabTrigger>
-    <scope>source.js, source.coffee</scope>
+    <scope>source.js, source.coffee, source.ts</scope>
     <description>debug key value</description>
 </snippet>
