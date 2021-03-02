@@ -2,7 +2,7 @@
   { "keys": ["ctrl+alt+p"], "command": "prompt_select_workspace" },
   { "keys": ["ctrl+shift+;"], "command": "open_terminal_project_folder" },
   { "keys": ["ctrl+shift+alt+;"], "command": "open_terminal" },
-  { "keys": ["ctrl+alt+l"], "command": "reveal_in_side_bar" },
+  { "keys": ["alt+shift+l"], "command": "reveal_in_side_bar" },
   {
     "keys": ["ctrl+shift+c"],
     "command": "toggle_comment",
