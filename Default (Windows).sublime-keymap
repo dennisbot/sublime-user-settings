@@ -8,13 +8,15 @@
     "command": "toggle_comment",
     "args": { "block": false }
   },
+  { "keys": ["alt+left"], "command": "jump_back" },
+  { "keys": ["alt+right"], "command": "jump_forward" },
   {
     "keys": ["ctrl+shift+7"],
     "command": "toggle_comment",
     "args": { "block": true }
   },
   { "keys": ["ctrl+t"], "command": "side_bar_new_file2" },
-  { "keys": ["ctrl+shift+n"], "command": "reopen_last_file" },
+  { "keys": ["ctrl+shift+t"], "command": "reopen_last_file" },
   {
     "keys": ["ctrl+enter"],
     "command": "run_macro_file",
