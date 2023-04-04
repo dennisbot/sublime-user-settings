@@ -1,8 +1,5 @@
 {
 	"bootstrapped": true,
-	"in_process_packages":
-	[
-	],
 	"installed_packages":
 	[
 		"Babel",
@@ -13,7 +10,7 @@
 		"EditorConfig",
 		"Emmet",
 		"File History",
-		"Gist",
+		"gist",
 		"Git",
 		"HTML (C#)",
 		"HTML-CSS-JS Prettify",
@@ -35,10 +32,9 @@
 		"Terminal",
 		"Theme - Bamboo",
 		"Theme - Cobalt2",
-		"TypeScript Syntax",
 		"Wombat Color Scheme",
 		"Wombat Theme",
 		"Wombatish color scheme",
-		"zenburn"
+		"zenburn",
 	]
 }
