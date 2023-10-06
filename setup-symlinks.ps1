@@ -68,6 +68,20 @@ function Create-Env-Variable {
   }
 }
 
+function Create-Git-Plugin-Symlink {
+    $scriptDirectory = [System.IO.Path]::GetDirectoryName($PSCommandPath)
+    $sourceDir = Join-Path -Path $scriptDirectory -ChildPath "Git"
+    $username = [Environment]::UserName
+    $destDir = "C:\Users\$username\AppData\Roaming\Sublime Text\Packages\Git"
+    if (Test-Path $destDir) {
+        Write-Warning "Item already exists in the destination, skipping: $destDir"
+    }
+    else {
+        New-Item -ItemType Junction -Path $destDir -Value $sourceDir
+    }
+}
+
 # Call the functions
 Create-Env-Variable
+Create-Git-Plugin-Symlink
 Create-Userfiles-Symlinks -Confirm:$confirm
