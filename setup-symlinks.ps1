@@ -5,11 +5,11 @@ param(
 
 function Create-Userfiles-Symlinks {
     [CmdletBinding(SupportsShouldProcess)]
-    param()
+    param(
+		[string]$username
+	)
     # Define the source and destination directories
     $scriptDirectory = [System.IO.Path]::GetDirectoryName($PSCommandPath)
-    # Get the current user's username
-    $username = [Environment]::UserName
     $destDir = "C:\Users\$username\AppData\Roaming\Sublime Text\Packages\User"
 
     # Ensure the destination directory exists
@@ -69,9 +69,12 @@ function Create-Env-Variable {
 }
 
 function Create-Git-Plugin-Symlink {
+	param(
+		[string]$username
+	)
+  
     $scriptDirectory = [System.IO.Path]::GetDirectoryName($PSCommandPath)
     $sourceDir = Join-Path -Path $scriptDirectory -ChildPath "Git"
-    $username = [Environment]::UserName
     $destDir = "C:\Users\$username\AppData\Roaming\Sublime Text\Packages\Git"
     if (Test-Path $destDir) {
         Write-Warning "Item already exists in the destination, skipping: $destDir"
@@ -81,7 +84,15 @@ function Create-Git-Plugin-Symlink {
     }
 }
 
+$username = Read-Host "Enter the user home folder name (leave blank to use $([Environment]::UserName)):"
+# Use the provided user home folder or fall back to $([Environment]::UserName)
+if ($username -eq "") {
+  $username = [Environment]::UserName
+}
+
+Write-Host "user home folder name to be used is: $username"
+
 # Call the functions
 Create-Env-Variable
-Create-Git-Plugin-Symlink
-Create-Userfiles-Symlinks -Confirm:$confirm
+Create-Git-Plugin-Symlink -username $username
+Create-Userfiles-Symlinks -username $username -Confirm:$confirm
