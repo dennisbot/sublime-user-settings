@@ -65,12 +65,14 @@
 		"subpixel_antialias",
 		"gray_antialias"
 	],
-	"font_size": 17,
+	"font_size": 16,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"Emmet",
 		"Markdown",
+		"Pretty JSON",
 		"Vintage",
 	],
 	"indent_guide_options":
@@ -92,4 +94,5 @@
 	"update_check": false,
 	"wide_caret": true,
 	"word_wrap": true,
+	"index_files": true,
 }

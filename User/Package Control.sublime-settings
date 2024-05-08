@@ -3,10 +3,11 @@
 	"installed_packages":
 	[
 		"Babel",
-		"Better CoffeeScript",
 		"ClearConsole",
+		"CoffeeScript",
 		"ColorSchemeSelector",
 		"Compare Side-By-Side",
+		"Dracula Color Scheme",
 		"EditorConfig",
 		"Emmet",
 		"File History",
@@ -40,5 +41,7 @@
 	],
 	"in_process_packages":
 	[
+		"Emmet",
+		"Pretty JSON",
 	],
 }

@@ -32,7 +32,6 @@ different OSs.
   <div style="margin-left: 40px;">
     <p>And go to step 3 again.</p>
   </div>
-  
 
 4. Open up Sublime, it will automatically start to download any missing package (due to the new file linkages we have created), Sublime will know it has to install the missing packages, let's wait for it, in case something goes wrong (Sublime might change some files on its own), you can checkout any changes in this repo so that the original configs will be used (the files in this repo are symlinked that's why changes can be done here and will be propagated in Sublime configs).
 
