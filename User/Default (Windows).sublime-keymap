@@ -234,4 +234,5 @@
   { "keys": ["shift+alt+down"], "command": "duplicate_line" },
   { "keys": ["f2"], "command": "find_all_under" },
   { "keys": ["alt+shift+i"], "command": "split_selection_into_lines" },
+  { "keys": ["ctrl+shift+l"], "command": "find_all_under" }
 ]
