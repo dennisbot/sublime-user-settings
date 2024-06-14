@@ -3,19 +3,21 @@ param(
     [switch]$Confirm
 )
 
-function Create-Userfiles-Symlinks {
-    [CmdletBinding(SupportsShouldProcess)]
+function Create-Userfiles-Symlinks {    
     param(
-		[string]$username
-	)
+        [string]$TargetFolder
+    )
     # Define the source and destination directories
     $scriptDirectory = [System.IO.Path]::GetDirectoryName($PSCommandPath)
-    $destDir = "C:\Users\$username\AppData\Roaming\Sublime Text\Packages\User"
+    $destDir = "$TargetFolder\AppData\Roaming\Sublime Text\Packages\User"
 
     # Ensure the destination directory exists
-    if (-not (Test-Path $destDir)) {
-        Write-Error "Destination directory does not exist: $destDir"
-        exit
+    if (Test-Path $destDir) {
+        Write-Warning "Item already exists in the destination, skipping: $destDir"
+    }
+    else {
+        Write-Host "Destination directory does not exist. Creating: $destDir"
+        New-Item -ItemType Directory -Path $destDir
     }
 
     $sourceDir = Join-Path -Path $scriptDirectory -ChildPath "User"
@@ -69,13 +71,14 @@ function Create-Env-Variable {
 }
 
 function Create-Git-Plugin-Symlink {
-	param(
-		[string]$username
-	)
+    param(
+        [string]$TargetFolder
+    )
   
     $scriptDirectory = [System.IO.Path]::GetDirectoryName($PSCommandPath)
     $sourceDir = Join-Path -Path $scriptDirectory -ChildPath "Git"
-    $destDir = "C:\Users\$username\AppData\Roaming\Sublime Text\Packages\Git"
+    $destDir = "$TargetFolder\AppData\Roaming\Sublime Text\Packages\Git"
+
     if (Test-Path $destDir) {
         Write-Warning "Item already exists in the destination, skipping: $destDir"
     }
@@ -84,15 +87,15 @@ function Create-Git-Plugin-Symlink {
     }
 }
 
-$username = Read-Host "Enter the user home folder name (leave blank to use $([Environment]::UserName)):"
-# Use the provided user home folder or fall back to $([Environment]::UserName)
-if ($username -eq "") {
-  $username = [Environment]::UserName
-}
+$homeFolder = Read-Host "Enter the path to the home folder (leave blank to use $HOME):"
+# Use the provided home folder or fall back to $HOME
+if ($homeFolder -eq "") {
+    $homeFolder = $HOME
+  }
 
-Write-Host "user home folder name to be used is: $username"
+Write-Host "Home folder to be used is: $homeFolder"
 
 # Call the functions
 Create-Env-Variable
-Create-Git-Plugin-Symlink -username $username
-Create-Userfiles-Symlinks -username $username -Confirm:$confirm
+Create-Git-Plugin-Symlink -TargetFolder $homeFolder
+Create-Userfiles-Symlinks -TargetFolder $homeFolder
