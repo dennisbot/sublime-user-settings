@@ -45,6 +45,14 @@
 	// e.g. "Packages/Git/syntax/Git Commit Message.tmLanguage"
 	,"diff_syntax": "Packages/Git/syntax/Git Diff.sublime-syntax"
 
+	// Syntax for git log / git show commit details (includes patches).
+	// Patch hunks are scoped as source.diff so they match Git: Diff colors.
+	// ST4 alternative: "Packages/Git Formats/Git Log.sublime-syntax"
+	,"log_syntax": "Packages/Git/syntax/Git Commit View.sublime-syntax"
+
+	// Word wrap in Git scratch views (log, diff, show, custom command)
+	,"word_wrap": true
+
 	// Rulers for commit view
 	,"commit_rulers": [70]
 

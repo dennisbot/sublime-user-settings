@@ -138,7 +138,7 @@
 		</dict>
 	</array>
 	<key>scopeName</key>
-	<string>text.git-commit-view</string>
+	<string>text.git-commit</string>
 	<key>uuid</key>
 	<string>5d37add9-1219-4174-b232-4bd423b84c0a</string>
 </dict>

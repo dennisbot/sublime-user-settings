@@ -1,0 +1,34 @@
+%YAML 1.2
+---
+# `git log -p` / `git show` output. Patch hunks are scoped as source.diff
+# so they pick up the same colors as Git: Diff.
+name: Git Commit View
+file_extensions:
+  - git-commit-view
+scope: text.git-commit
+version: 2
+
+contexts:
+  main:
+    - match: '^(commit)\s+([0-9a-f]{4,40})\b(.*)$'
+      scope: meta.header.git.commit
+      captures:
+        1: keyword.other.commit.git
+        2: constant.other.hash.git string.sha.git-blame
+        3: comment.line.git
+    - match: '^(Author|Commit|Committer|Merge)(:)\s*(.*)$'
+      scope: meta.header.git.commit
+      captures:
+        1: keyword.other.header.git support.function.author.git-blame
+        2: punctuation.separator.key-value.git
+        3: string.unquoted.git
+    - match: '^(AuthorDate|CommitDate|Date)(:)\s*(.*)$'
+      scope: meta.header.git.commit
+      captures:
+        1: keyword.other.header.git
+        2: punctuation.separator.key-value.git
+        3: constant.numeric.date.git-blame
+    - match: '(?=^diff --)'
+      embed: Packages/Git/syntax/Git Diff.sublime-syntax
+      embed_scope: source.diff
+      escape: '(?=^commit )'

@@ -333,7 +333,10 @@ class GitCommand(object):
         self._output_to_view(scratch_file, output, **kwargs)
         scratch_file.set_read_only(True)
         self.record_git_root_to_view(scratch_file)
-        scratch_file.settings().set('word_wrap', kwargs.get("word_wrap", False))
+        s = sublime.load_settings("Git.sublime-settings")
+        scratch_file.settings().set(
+            'word_wrap', kwargs.get("word_wrap", s.get("word_wrap", True))
+        )
         scratch_file.run_command('goto_line', {'line': focused_line})
         return scratch_file
 

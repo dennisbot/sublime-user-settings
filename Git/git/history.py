@@ -7,6 +7,11 @@ import sublime
 from . import GitTextCommand, GitWindowCommand, plugin_file
 
 
+def log_syntax():
+    s = sublime.load_settings("Git.sublime-settings")
+    return s.get("log_syntax", plugin_file("syntax/Git Commit View.sublime-syntax"))
+
+
 class GitBlameCommand(GitTextCommand):
     def run(self, edit):
         # somewhat custom blame command:
@@ -95,7 +100,7 @@ class GitLog(object):
 
     def details_done(self, result):
         self.scratch(result, title="Git Commit Details",
-                     syntax=plugin_file("syntax/Git Commit View.tmLanguage"))
+                     syntax=log_syntax())
 
 
 class GitLogCommand(GitLog, GitTextCommand):
@@ -157,7 +162,7 @@ class GitShowCommitCommand(GitWindowCommand):
             self.panel(result)
             return
         self.scratch(result, title="Git Commit: %s" % commit,
-                     syntax=plugin_file("syntax/Git Commit View.tmLanguage"))
+                     syntax=log_syntax())
 
 
 class GitGraph(object):
@@ -244,7 +249,7 @@ class GitDocumentCommand(GitBlameCommand):
         commits = [commit for d, commit in commits]
 
         self.scratch('\n\n'.join(commits), title="Git Commit Documentation",
-                     syntax=plugin_file("syntax/Git Commit View.tmLanguage"))
+                     syntax=log_syntax())
 
 
 class GitGotoCommit(GitTextCommand):
@@ -269,7 +274,7 @@ class GitGotoCommit(GitTextCommand):
 
     def show_done(self, result):
         self.scratch(result, title="Git Commit View",
-                     syntax=plugin_file("syntax/Git Commit View.tmLanguage"))
+                     syntax=log_syntax())
 
     def is_enabled(self):
         selection = self.view.sel()[0]
