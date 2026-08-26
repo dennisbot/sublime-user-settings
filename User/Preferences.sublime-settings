@@ -11,19 +11,20 @@
 		"*.zip",
 		".svn/",
 		".git/",
-		"node_modules/",
+		// "node_modules/",
 		"log/",
-		"coverage/",
-		"public/",
-		"dist/",
-		"bower_components/"
+		// "coverage/",
+		// "public/",
+		// "dist/",
+		"bower_components/",
+		"**/bin/Debug/**"
 	],
 	"bold_folder_labels": true,
 	"caret_extra_bottom": 2,
 	"caret_extra_top": 2,
 	"caret_extra_width": 1,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Wombat Theme/Wombat.tmTheme",
+	"color_scheme": "Night Owl.sublime-color-scheme",
 	"default_line_ending": "unix",
 	"detect_indentation": true,
 	"draw_white_space": "all",
@@ -54,10 +55,10 @@
 	],
 	"folder_exclude_patterns":
 	[
-		".hg",
-		"CVS",
-		"public/packs/",
-		"tmp/"
+		// ".hg",
+		// "CVS",
+		// "public/packs/",
+		// "tmp/"
 	],
 	"font_face": "Fira Code",
 	"font_options":
@@ -65,7 +66,7 @@
 		"subpixel_antialias",
 		"gray_antialias"
 	],
-	"font_size": 16,
+	"font_size": 17,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
