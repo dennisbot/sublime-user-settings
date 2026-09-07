@@ -27,9 +27,13 @@ function Create-Userfiles-Symlinks {
         $sourceItem = Join-Path -Path $sourceDir -ChildPath $item.Name
         $destItem = Join-Path -Path $destDir -ChildPath $item.Name
 
-        # Check if a file/folder with the same name already exists in the destination
-        if (Test-Path $destItem) {
-            Write-Warning "Item already exists in the destination, skipping: $destItem"
+        # Replace managed destination items so rerunning the script repairs stale copies and links.
+        $existingItem = Get-Item -LiteralPath $destItem -Force -ErrorAction SilentlyContinue
+        if ($existingItem -and $PSCmdlet.ShouldProcess($destItem, "Replace existing item with a symlink")) {
+            Remove-Item -LiteralPath $destItem -Force
+        }
+
+        if ($existingItem -and (Test-Path -LiteralPath $destItem)) {
             continue
         }
 
