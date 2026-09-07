@@ -1,0 +1,30 @@
+[
+  {
+    "button": "button1",
+    "count": 1,
+    "modifiers": ["ctrl"],
+    "press_command": "drag_select",
+    "command": "git_goto_commit",
+    "context": [
+      {
+        "key": "selector",
+        "operator": "equal",
+        "operand": "text.git-blame, text.git-graph"
+      }
+    ]
+  },
+  {
+    "button": "button1",
+    "count": 1,
+    "modifiers": ["ctrl"],
+    "press_command": "drag_select",
+    "command": "lsp_symbol_definition",
+    "context": [
+      {
+        "key": "lsp.session_with_capability",
+        "operator": "equal",
+        "operand": "definitionProvider"
+      }
+    ]
+  }
+]
