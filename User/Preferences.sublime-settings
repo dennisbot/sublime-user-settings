@@ -94,5 +94,6 @@
 	"wide_caret": true,
 	"word_wrap": true,
 	"index_files": true,
-	"themed_title_bar": false
+	"themed_title_bar": false,
+	"hot_exit": false
 }
