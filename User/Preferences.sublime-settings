@@ -95,5 +95,6 @@
 	"word_wrap": true,
 	"index_files": true,
 	"themed_title_bar": false,
-	"hot_exit": false
+	"hot_exit": false,
+	"inactive_sheet_dimming": true
 }

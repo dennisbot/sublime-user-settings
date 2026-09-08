@@ -1,5 +1,5 @@
 [
-  { "keys": ["ctrl+alt+p"], "command": "prompt_select_workspace" },
+  { "keys": ["ctrl+r"], "command": "prompt_select_workspace" },
   { "keys": ["ctrl+shift+;"], "command": "open_terminal_project_folder" },
   { "keys": ["ctrl+shift+alt+;"], "command": "open_terminal" },
   { "keys": ["alt+shift+l"], "command": "reveal_in_side_bar" },
